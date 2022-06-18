@@ -10,24 +10,24 @@
 </head>
 
 <body>
-    <Header>
+    <header>
         <div>
             <button class="highScoreLink" id="high-score">View high score</button>
         </div>
         <div>
             <h1 id="timer"></h1>
         </div>
-    </Header>
+    </header>
 
     <!-- main section with welcome screen and questions-->
     <main id="main">
-        <h1 id="questions">Test Your Coding Knowledge!</h1>
-        <button class="btn" id="start-button">Start Quiz</button>
-        <div class="answers">
-            <button class="btn" id="answer1"></button>
-            <button class="btn" id="answer2"></button>
-            <button class="btn" id="answer3"></button>
-            <button class="btn" id="answer4"></button>
+        <div id="start-screen">
+            <h1>Test Your Coding Knowledge!</h1>
+            <button class="btn" id="start-button">Start Quiz</button></div>
+        
+        <div id="questions" class="hide answers">
+            <h2 id="message"></h2>
+            <div id="choices" class="choices"></div>
         </div>
 
         <!--Enter initials and submit once game is over-->
@@ -35,6 +35,8 @@
         <button class="btn" id="saveScore"></button>
     </main>
 </body>
+<script src="./assets/questions.js"></script>
 <script src="./assets/script.js"></script>
+
 
 </html>
