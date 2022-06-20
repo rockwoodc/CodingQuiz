@@ -25,7 +25,18 @@ header {
     background-color: rgb(199, 127, 127);
     text-decoration: none;
     border: 0;
-    color:rgb(94, 89, 89)
+    color:rgb(94, 89, 89);
+    font-size: 15px;
+}
+
+.timer , .h2{
+    border-radius: 10px;
+    background-color: rgb(199, 127, 127);
+    text-decoration: none;
+    border: 0;
+    color:rgb(94, 89, 89);
+    font-size: 15px;
+    
 }
 
 #main {
