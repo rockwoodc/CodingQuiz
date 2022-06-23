@@ -24,15 +24,21 @@
         <div id="start-screen">
             <h1>Test Your Coding Knowledge!</h1>
             <button class="btn" id="start-button">Start Quiz</button></div>
-        
         <div id="questions" class="hide answers">
             <h2 id="message"></h2>
             <div id="choices" class="choices"></div>
+            <div id="feedback" class="feedback hide"></div>
         </div>
-
+        <div id="end-quiz" class="hide">
+            <h1>Congratulations, you've finished the quiz!</h1>
+            <p>Your score is <span id="finalScore"></span></p>
+            <p>Enter your initials to save your score.</p>
+            <input type="text" id="initials">
+            <button class="btn" id="saveScore">Save</button>
+        </div>
         <!--Enter initials and submit once game is over-->
         <!--text area or window alert-->
-        <button class="btn" id="saveScore"></button>
+        
     </main>
 </body>
 <script src="./assets/questions.js"></script>
