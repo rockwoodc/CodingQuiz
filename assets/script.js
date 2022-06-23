@@ -7,7 +7,6 @@ var startBtn = document.getElementById("start-button");
 var choices = document.getElementById("choices");
 var endQuizPage = document.getElementById("end-quiz");
 var saveScore = document.getElementById("saveScore");
-var feedbackEl = document.getElementById("feedback")
 
 function startQuiz() {
     var startEl = document.querySelector("#start-screen");
@@ -38,7 +37,7 @@ function displayQuestions () {
     choiceAnswers.setAttribute("class", "choice")
     choiceAnswers.setAttribute("value", choice)
     //allows questions to start at 1 instead of 0
-    choiceAnswers.textContent = i + 1 + choice
+    choiceAnswers.textContent = choice
 
     //allows question to appear
     
@@ -53,16 +52,6 @@ function answerClick() {
     if (this.value !== questions[questionIndex].answer) {
         //lose time
         time -= 15;
-    
-        feedbackEl.textContent = "Wrong!";
-        feedbackEl.style.color = "red";
-        feedbackEl.style.fontSize = "400%";
-    } else {
-        feedbackEl.textContent = "Correct!";
-        feedbackEl.style.color = "green";
-        feedbackEl.style.fontSize = "400%";
-    
-    //gain points if answer is correct
 
     //go to next question
     
@@ -80,6 +69,7 @@ function answerClick() {
 function endQuiz(){
     var finalScore = document.getElementById("finalScore");
     clearInterval(timerId);
+    //clear out timer and display message once 0 is reached
     document.getElementById('timer').innerHTML = "Times up!";
     questionsEl.setAttribute("class","hide");
     //show end screen
@@ -88,7 +78,7 @@ function endQuiz(){
 } 
 
 // //allow user to enter initials and save score
-function saveScore() {
+function saveUserScore() {
     //get elementbyid for initals
     var initials = getElementById("initials");
     //create a new object for final score with 2 key value pairs time:initials = score:user initals
@@ -96,6 +86,7 @@ function saveScore() {
         score: time, 
         initials: initials
     }
+    //added variable to try and pull from local storage
     var highscores = JSON.parse(window.localStorage.getItem("highscores")) || [];
     highscores.push(saveInitials);
     window.localStorage.setItem("highscores", JSON.stringify(highscores));
@@ -103,8 +94,7 @@ function saveScore() {
     localStorage.setItem('saveScore', JSON.stringify(saveInitials));
 
 }
-
 //once start button is clicked, the quiz & timer begins
 startBtn.onclick = startQuiz
-//on click event to save the score once initials are inputted 
-saveScore.onclick = saveScore
+// //on click event to save the score once initials are inputted 
+saveScore.onclick = saveUserScore
